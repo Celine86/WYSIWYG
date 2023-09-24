@@ -1,0 +1,1 @@
+Just to have a file in this folder when the repository is cloned
