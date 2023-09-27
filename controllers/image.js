@@ -10,7 +10,6 @@ exports.addImage = async (req, res, next) => {
         if(user !== null) { 
             if (req.file) {
                 imageUrl = `${req.protocol}://${req.get('host')}/images/${req.file.filename}`;
-                console.log(imageUrl);
                 const myImage = await db.Image.create({
                     UserId: user.id,
                     imageUrl: imageUrl,
@@ -27,3 +26,5 @@ exports.addImage = async (req, res, next) => {
         return res.status(500).json({ error: "Erreur Serveur" });
     }
 };
+
+
