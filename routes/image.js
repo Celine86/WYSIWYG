@@ -6,5 +6,6 @@ const imageCtrl = require("../controllers/image");
 
 
 router.post("/create", auth.signin, multer, imageCtrl.addImage);
+router.get("/allimages", auth.signin, imageCtrl.getAllImages);
 
 module.exports = router;
