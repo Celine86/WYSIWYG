@@ -1,6 +1,5 @@
 const db = require("../models"); 
 const auth = require("../middleware/auth")
-const fs = require("fs");
 const xss = require("xss");
 
 // CREATION d'un POST

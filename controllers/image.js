@@ -1,5 +1,6 @@
 const db = require("../models"); 
-const auth = require("../middleware/auth")
+const auth = require("../middleware/auth");
+const xss = require("xss");
 
 // AJOUT d'une IMAGE
 exports.addImage = async (req, res, next) => {
@@ -13,6 +14,7 @@ exports.addImage = async (req, res, next) => {
                 const myImage = await db.Image.create({
                     UserId: user.id,
                     imageUrl: imageUrl,
+                    imageTitle: xss(req.body.title),
                 }); 
                 res.status(200).json({ myImage: myImage.imageUrl, message: "Image ajoutée" });
             } else {
