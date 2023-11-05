@@ -26,10 +26,8 @@ exports.addImage = async (req, res, next) => {
         }
     } catch (error) {
         return error
-        //res.status(500).json({ error: "Erreur Serveur" });
     }
 };
-
 
 exports.getAllImages = async (req,res, next) => {
     try {
@@ -40,6 +38,17 @@ exports.getAllImages = async (req,res, next) => {
     }
     catch (error) {
         return error
-        //res.status(500).json({ error: "Erreur Serveur" });
+    }
+};
+
+exports.getOneImage = async (req,res, next) => {
+    try {
+        const image = await db.Image.findOne({ attributes: ["id", "imageUrl", "imageTitle"], 
+        where: { id: req.params.id } 
+    })
+        res.status(200).json({ image });
+    }
+    catch (error) {
+        return error
     }
 };
