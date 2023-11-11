@@ -1,21 +1,9 @@
 {
-  "name": "groupomania",
+  "name": "wysiwyg",
   "version": "1.0.0",
-  "description": "BackEnd du projet Groupomania, un réseau social d'entreprise",
   "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Celine86/CelineObringer_7_18082021_BackEnd.git"
-  },
   "author": "Celine Obringer",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Celine86/CelineObringer_7_18082021_BackEnd/issues"
-  },
-  "homepage": "https://github.com/Celine86/CelineObringer_7_18082021_BackEnd#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "dotenv": "^10.0.0",
@@ -28,8 +16,5 @@
     "sequelize": "^6.6.5",
     "uuid": "^8.3.2",
     "xss": "^1.0.9"
-  },
-  "devDependencies": {
-    "sequelize-cli": "^6.3.0"
   }
 }
