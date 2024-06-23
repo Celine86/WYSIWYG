@@ -21,7 +21,8 @@ exports.signup = async (req, res, next) => {
           res.status(201).json({ message: "Votre compte est créé. Vous pouvez vous connecter avec votre identifiant et mot de passe !" });
       }
     } catch (error) {
-      return res.status(500).json({ error: "Erreur Serveur" });
+        console.log(error);
+        //return error;
     }
   } else {
     return res.status(401).json({ error: "Vous devez renseigner tous les champs pour vous inscrire !" });
@@ -49,6 +50,7 @@ exports.login = async (req, res, next) => {
       }
     }
   } catch (error) {
-    return res.status(500).json({ error: "Erreur Serveur" });
+      console.log(error);
+      //return error;
   }
 };

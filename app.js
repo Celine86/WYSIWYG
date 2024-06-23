@@ -9,11 +9,6 @@ db.sequelize.sync().then(function () {
   require("./seeders/firstuser");
 })
 
-// Sync Tables and force modifications 
-// Note, set force to true if error "Too many keys specified; max 64 keys allowed"
-//db.sequelize.sync({ alter: true, force: false })
-
-
 app.use(helmet());
 
 app.use((req, res, next) => {
@@ -23,8 +18,12 @@ app.use((req, res, next) => {
   next();
 }); 
 
+//app.use(express.json({limit: '50mb'}));
+//app.use(express.urlencoded({limit: '50mb', extended: true }))
+
+
+//app.use(express.urlencoded({extended: true }))
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
 app.use("/images", express.static(path.join(__dirname, "images")));
 app.use('/api/users', require('./routes/user'));

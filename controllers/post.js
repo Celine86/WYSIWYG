@@ -23,7 +23,8 @@ exports.createPost = async (req, res, next) => {
             return res.status(403).json({ error: "Le post n'a pas pu être ajouté" });
         }
     } catch (error) {
-        return res.status(500).json({ error: "Erreur Serveur" });
+        console.log(error);
+        //return error;
     }
 };
 
@@ -36,6 +37,7 @@ exports.getOnePost = async (req, res, next) => {
         });
         res.status(200).json(post);
     } catch (error) {
-        return res.status(500).json({ error: "Erreur Serveur" });
+        console.log(error);
+        //return error;
     }
 };

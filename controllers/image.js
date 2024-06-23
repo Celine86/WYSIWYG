@@ -15,7 +15,7 @@ exports.addImage = async (req, res, next) => {
                     UserId: user.id,
                     imageUrl: imageUrl,
                     imageTitle: xss(req.body.title),
-                }); 
+                });
                 res.status(200).json({ myImage: myImage.imageUrl, message: "Image ajoutée" });
             } else {
                 res.status(403).json({ message: "Merci de rajouter une image" });
@@ -25,7 +25,8 @@ exports.addImage = async (req, res, next) => {
             return res.status(403).json({ error: "Merci de vous connecter" });
         }
     } catch (error) {
-        return error
+        console.log(error);
+        //return error;
     }
 };
 
@@ -37,7 +38,8 @@ exports.getAllImages = async (req,res, next) => {
         res.status(200).json({ allImages });
     }
     catch (error) {
-        return error
+        console.log(error);
+        //return error;
     }
 };
 
@@ -49,6 +51,7 @@ exports.getOneImage = async (req,res, next) => {
         res.status(200).json({ image });
     }
     catch (error) {
-        return error
+        console.log(error);
+        //return error;
     }
 };
